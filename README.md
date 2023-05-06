@@ -3,11 +3,11 @@
 
 # Azure Public IPs
 
-Master : 20.197.63.120
+Master : 20.197.XX.XXX
 
-Node1 : 52.140.113.190
+Node1 : 52.140.XX.XXX
 
-Node2 : 20.193.229.150
+Node2 : 20.193.XX.XXX
 
 ![SCR-20230420-w0z.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cf416125-b559-469e-ace8-7d009dd00214/SCR-20230420-w0z.png)
 
