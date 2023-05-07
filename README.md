@@ -9,13 +9,12 @@ Node1 : 52.140.XX.XXX
 
 Node2 : 20.193.XX.XXX
 
-![SCR-20230420-w0z.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cf416125-b559-469e-ace8-7d009dd00214/SCR-20230420-w0z.png)
-
-![SCR-20230420-w1x.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/64a75e93-7cd8-4241-86dc-c6bee3b28ab0/SCR-20230420-w1x.png)
-
-![SCR-20230420-w2v.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/27a14160-5fc9-426d-8058-ad7740d92b0b/SCR-20230420-w2v.png)
-
-![SCR-20230420-w3b.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2bd8b675-0915-44a0-9aff-6ce4b92fbbe0/SCR-20230420-w3b.png)
+<div align=center> 
+<img width="1008" alt="SCR-20230420-w0z" src="https://user-images.githubusercontent.com/54627871/236670331-d2449c99-7537-4f89-b1ce-1ddb2efe1e0a.png">
+<img width="1073" alt="SCR-20230420-w1x" src="https://user-images.githubusercontent.com/54627871/236670334-f1961d33-4221-4416-a4f8-ba60ecd004f7.png">
+<img width="1078" alt="SCR-20230420-w2v" src="https://user-images.githubusercontent.com/54627871/236670338-07b38606-7073-42e0-ba6d-b2d8298e8f78.png">
+<img width="739" alt="SCR-20230420-w3b" src="https://user-images.githubusercontent.com/54627871/236670340-a09f2ba0-03d7-4b83-b5ee-5af0581ce556.png">
+</div>
 
 Steps
 
@@ -25,9 +24,9 @@ Steps
 2. Allowed inbound traffic to the master and worker node VMs.
 3. Installed the containerd runtime on the nodes.
 
-![SCR-20230421-sp.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9e309a6a-1e7f-415d-8270-0df724bfb9bf/SCR-20230421-sp.png)
+<img width="594" alt="SCR-20230421-sp" src="https://user-images.githubusercontent.com/54627871/236670442-0d783998-334b-4fd3-b87f-8e8d09b33c1c.png">
+<img width="485" alt="SCR-20230421-ym" src="https://user-images.githubusercontent.com/54627871/236670444-4ddc4886-8c05-4059-91bb-36f4600cf751.png">
 
-![SCR-20230421-yy.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a100d244-906b-48a1-8315-bcbb37c1652e/SCR-20230421-yy.png)
 
 1. Command : sudo apt-get install condtainerd
 2. Automated the task using shell scripting.
@@ -35,11 +34,11 @@ Steps
 4. Added the WeaveNet CNI (Container Networking Interface) plugin to enable networking in the cluster.
 5. Deployed an Nginx pods using a deployment and added service ( IP’s ) to the Pods
 
-![SCR-20230421-md.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2205f9d7-3e42-4bcb-b560-f7e8365dd1ae/SCR-20230421-md.png)
-
-![SCR-20230421-l7.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4e72af55-35fc-4a0c-a304-6d7db29b1e17/SCR-20230421-l7.png)
-
-![SCR-20230421-lo.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ce60ab38-095d-473e-8d1b-6f312b39e457/SCR-20230421-lo.png)
+<div align=center>
+<img width="1067" alt="SCR-20230421-md" src="https://user-images.githubusercontent.com/54627871/236670496-f0688303-a235-499a-bea8-6c4a7ddb44d9.png">
+<img width="899" alt="SCR-20230421-l7" src="https://user-images.githubusercontent.com/54627871/236670492-508cc980-d22a-4f9b-9eae-a8d9def97fa9.png">
+<img width="826" alt="SCR-20230421-lo" src="https://user-images.githubusercontent.com/54627871/236670494-c0aa9b64-62e5-421c-a5d1-b132d286f68e.png">
+</div>
 
 1. Accessing Nginx Server through test pod using service
 2. DNS in Kubernetes
@@ -49,6 +48,8 @@ Steps
 6. set the ingress class correctly to access from internet
 7. Creating RBAC for groups and user
 
-![SCR-20230506-u1m.jpeg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/77e94bae-0d0c-4e4d-9ba6-fe198472b5b0/SCR-20230506-u1m.jpeg)
+
+<img width="526" alt="SCR-20230421-lo" src="https://user-images.githubusercontent.com/54627871/236670559-1205d8f8-e001-4f7e-9b0f-988e4f7ce083.jpeg">
+
 
 1. Using custom certificates generated to execute command ( other than kube-admin )
