@@ -11,8 +11,6 @@ Node2 : 20.193.XX.XXX
 
 <div align=center> 
 <img width="1008" alt="SCR-20230420-w0z" src="https://user-images.githubusercontent.com/54627871/236670331-d2449c99-7537-4f89-b1ce-1ddb2efe1e0a.png">
-<img width="1073" alt="SCR-20230420-w1x" src="https://user-images.githubusercontent.com/54627871/236670334-f1961d33-4221-4416-a4f8-ba60ecd004f7.png">
-<img width="1078" alt="SCR-20230420-w2v" src="https://user-images.githubusercontent.com/54627871/236670338-07b38606-7073-42e0-ba6d-b2d8298e8f78.png">
 <img width="739" alt="SCR-20230420-w3b" src="https://user-images.githubusercontent.com/54627871/236670340-a09f2ba0-03d7-4b83-b5ee-5af0581ce556.png">
 </div>
 
