@@ -25,4 +25,8 @@ Steps
 <img width="594" alt="SCR-20230421-sp" src="https://user-images.githubusercontent.com/54627871/236670442-0d783998-334b-4fd3-b87f-8e8d09b33c1c.png">
 <img width="485" alt="SCR-20230421-ym" src="https://user-images.githubusercontent.com/54627871/236670444-4ddc4886-8c05-4059-91bb-36f4600cf751.png">
 
-
+4. Installed Kubeadm configurations.
+5. Added the WeaveNet CNI (Container Networking Interface) plugin to enable networking in the cluster.
+6. Initialized the master node using the kubeadm init command.
+7. Joined the worker nodes to the cluster using the kubeadm join command.
+8. Installed kubelet and kubectl on the master and worker nodes.
