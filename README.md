@@ -2,6 +2,8 @@
 
 This repository contains YAML files and documentation of the steps and commands I performed during my learning of Kubernetes.
 
+Check the overview file for the Azure configuration and the steps I followed to deploy the cluster.
+
 ## Introduction
 
 Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides a platform-agnostic way to deploy and manage applications in a containerized environment. Kubernetes abstracts away the underlying infrastructure and provides a consistent API to manage containers across multiple environments.
