@@ -2,7 +2,7 @@
 
 This repository contains YAML files and documentation of the steps and commands I performed during my learning of Kubernetes.
 
-Check the overview file for the Azure configuration and the steps I followed to deploy the cluster.
+Check the Azure readme for the Azure configuration and the steps I followed to deploy the cluster.
 
 ## Introduction
 
