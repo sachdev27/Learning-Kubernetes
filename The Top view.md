@@ -48,8 +48,42 @@
 
 1. k exec -it podname -- sh
 2. k exec -it podname -- bash
+3. k exec -it nginx -- cat /etc/nginx/nginx.conf
+4. k exec -it nginx  -c nginx -- cat /etc/nginx/nginx.conf
 
 ## JSON path queries
 
-1. k get pods -o jsonpath='{.items[*].spec.containers[*].image}'
-2. k get pods -o jsonpath='{.items[*].metadata.name}'
+1. k get pods -o jsonpath='{.items[*].metadata.name}' # all pods
+2. k get pod -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' # new line
+3. k get pod -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.podIP}{"\n"}{end}' # tab separated
+4. k get pod -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.podIP}{"\t"}{.status.startTime}{"\n"}{end}' # tab separated with start time
+
+## creating custom scripts of jsonpath
+
+1. creating a script 
+```bash
+ kubectl get pods -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.podIP}{"\t"}{.status.startTime}{"\n"}{end}' > podlist.sh
+```
+
+2. giving permission to execute the script
+```bash
+chmod +x podlist.sh
+```
+
+### costum column in kubectl
+
+```bash
+kubectl get pods -o custom-columns=POD_NAME:.metadata.name,POD_IP:.status.podIP,START_TIME:.status.startTime
+```
+
+## Troubleshooting Nodes in kubernetes
+
+1. ssh into the node
+2. check the logs of kubelet
+3. check the logs of kube-proxy
+4. check the logs of container runtime
+5. check the logs of kube-apiserver
+6. check the logs of kube-controller-manager
+7. check the logs of kube-scheduler
+8. check the logs of etcd
+9. check the logs of kube-dns
