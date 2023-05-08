@@ -1,7 +1,5 @@
 
-# Kubernetes Course
-
-## Azure Public IPs
+# Azure Public IPs
 
 Master : 20.197.XX.XXX
 
@@ -14,7 +12,7 @@ Node2 : 20.193.XX.XXX
 <img width="739" alt="SCR-20230420-w3b" src="https://user-images.githubusercontent.com/54627871/236670340-a09f2ba0-03d7-4b83-b5ee-5af0581ce556.png">
 </div>
 
-Steps
+## Steps
 
   
 
