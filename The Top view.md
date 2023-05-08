@@ -1,15 +1,14 @@
-1. Command : sudo apt-get install condtainerd
-2. Automated the task using shell scripting.
-3. Installed Kubeadm configurations.
-4. Added the WeaveNet CNI (Container Networking Interface) plugin to enable networking in the cluster.
+## Deployments and Services
 
-1. Deployed an Nginx pods using a deployment and added service ( IP’s ) to the Pods
+
 
 <div align=center>
 <img width="1067" alt="SCR-20230421-md" src="https://user-images.githubusercontent.com/54627871/236670496-f0688303-a235-499a-bea8-6c4a7ddb44d9.png">
 <img width="899" alt="SCR-20230421-l7" src="https://user-images.githubusercontent.com/54627871/236670492-508cc980-d22a-4f9b-9eae-a8d9def97fa9.png">
 <img width="826" alt="SCR-20230421-lo" src="https://user-images.githubusercontent.com/54627871/236670494-c0aa9b64-62e5-421c-a5d1-b132d286f68e.png">
 </div>
+
+## ConfigMaps and Secrets
 
 1. Accessing Nginx Server through test pod using service
 2. DNS in Kubernetes
@@ -20,7 +19,37 @@
 7. Creating RBAC for groups and user
 
 
-<img width="526" alt="SCR-20230421-lo" src="https://user-images.githubusercontent.com/54627871/236670559-1205d8f8-e001-4f7e-9b0f-988e4f7ce083.jpeg">
+##  RBAC Authentication
+
+1. Creating RSA Client key for user using openssl
+2. Creating a CSR for the user 
+3. Approving the CSR for the user
+
+## RBAC Authorization
+
+1. Creating a Role for the user
+2. Creating a RoleBinding for the user
+3. Creating a ClusterRole for the user
+4. Creating a ClusterRoleBinding for the user
 
 
-1. Using custom certificates generated to execute command ( other than kube-admin )
+
+## Troubleshooting in kubernetes
+
+1. is pod running ?
+2. is pod registered with service ?
+3. is service forwarding request?
+4. k get ep (end point)
+5. is service accessible ?
+6. check logs of pod for container logs
+7. check pod status using describe
+
+## Using exec command to access pod
+
+1. k exec -it podname -- sh
+2. k exec -it podname -- bash
+
+## JSON path queries
+
+1. k get pods -o jsonpath='{.items[*].spec.containers[*].image}'
+2. k get pods -o jsonpath='{.items[*].metadata.name}'
