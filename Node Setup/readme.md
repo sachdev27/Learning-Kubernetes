@@ -9,7 +9,12 @@ The worker nodes are the machines that run your applications. They are the machi
 1. 2 CPU
 2. 2 GB RAM
 
-Ports in the firewall that need to be open for the cluster to work properly in master and worker node:
+
+Kubernetes link : https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+
+--- 
+
+***Ports in the firewall that need to be open for the cluster to work properly in master and worker node***
 
 ### Master Node
 1. 6443 # Kubernetes API Server
@@ -28,8 +33,6 @@ Ports in the firewall that need to be open for the cluster to work properly in m
 
 
 
-Kubernetes link : https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
-
 ___
 The install.sh script installs containerd to the node. 
 
@@ -42,11 +45,14 @@ The kubeinstall.sh script installs the kubeadm, kubelet, and kubectl packages. T
 
 
 ## Kubeadm
-Kubeadm is a tool that is used to bootstrap the Kubernetes cluster. It is used to initialize the master node and join the worker nodes to the cluster.
+Kubeadm is a tool that is used to bootstrap the Kubernetes cluster. It is used to initialize the master node and join the worker nodes to the cluster. It is an automated process that is used to install the Kubernetes components on the nodes.
 
 
 ## kubectl
 kubectl is a command-line tool that is used to manage the Kubernetes cluster. It is used to deploy and manage applications on the cluster.
+It is an API client for the Kubernetes API server. It is used to interact with the cluster using the Kubernetes API.
+
 
 ## kubelet
 kubelet is a service that runs on each node in the cluster. It is used to manage the containers running on the node.
+Example: It is as a captain of the ship who is responsible for the ship and the crew members.

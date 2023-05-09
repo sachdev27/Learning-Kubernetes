@@ -6,6 +6,9 @@
 1. [Multi Container Pods](#multi-container-pods)
 2. [SideCar Container](#sidecar-container)
 3. [Init Container](#init-container)
+4. [Exposing Pod Information to the Containers](#exposing-pod-information-to-the-containers)
+5. [Exposing Pod Information to the Containers using Volume Mounts](#exposing-pod-information-to-the-containers-using-volume-mounts)
+
 
 
 ## Multi Container Pods
@@ -56,3 +59,79 @@ spec:
 
 ```
 
+
+
+## Exposing Pod Information to the Containers
+
+Description: Containers running in a pod can access information about the pod using environment variables and Volume mounts. This information can be used to configure the containers running in the pod
+
+The environment variables are automatically created by Kubernetes and are available to the containers running in the pod. The following environment variables are available to the containers running in a pod:
+
+- POD_NAME: The name of the pod.
+- POD_NAMESPACE: The namespace of the pod.
+- POD_IP: The IP address of the pod.
+- POD_SERVICE_ACCOUNT: The service account associated with the pod.
+- POD_NODE_NAME: The name of the node that the pod is running on.
+- POD_UID: The UID of the pod.
+- POD_RESTARTS: The number of times the pod has been restarted.
+- POD_HOST_IP: The IP address of the node that the pod is running on.
+- POD_HOSTNAME: The hostname of the node that the pod is running on.
+- POD_IPS: The IP addresses of the pod.
+- POD_IPS_<CONTAINER_NAME>: The IP addresses of the containers in the pod.
+
+### Example: Exposing Pod Information to the Containers
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-info-pod
+spec:
+    containers:
+    - name: main-container
+        image: nginx
+        env:
+        - name: POD_NAME
+            valueFrom:
+            fieldRef:
+                fieldPath: metadata.name
+        - name: POD_NAMESPACE
+            valueFrom:
+            fieldRef:
+                fieldPath: metadata.namespace
+        - name: POD_IP
+            valueFrom:
+            fieldRef:
+                fieldPath: status.podIP
+```
+
+## Exposing Pod Information to the Containers using Volume Mounts
+
+Example: 
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-info-pod
+spec:
+    containers:
+    - name: main-container
+        image: nginx
+        volumeMounts:
+        - name: pod-info
+            mountPath: /etc/pod-info
+    volumes:
+    - name: pod-info
+        downwardAPI:
+        items:
+        - path: "name"
+            fieldRef:
+            fieldPath: metadata.name
+        - path: "namespace"
+            fieldRef:
+            fieldPath: metadata.namespace
+        - path: "podIP"
+            fieldRef:
+            fieldPath: status.podIP
+```
