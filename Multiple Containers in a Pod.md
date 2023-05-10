@@ -93,15 +93,15 @@ spec:
         env:
         - name: POD_NAME
             valueFrom:
-            fieldRef:
+              fieldRef:
                 fieldPath: metadata.name
-        - name: POD_NAMESPACE
+        - name: POD_SERVICE_ACCOUNT
             valueFrom:
-            fieldRef:
-                fieldPath: metadata.namespace
+              fieldRef:
+                fieldPath: spec.serviceAccountName
         - name: POD_IP
             valueFrom:
-            fieldRef:
+              fieldRef:
                 fieldPath: status.podIP
 ```
 

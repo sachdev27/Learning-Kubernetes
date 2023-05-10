@@ -1,11 +1,5 @@
+# Azure Setup
 
-# Azure Public IPs
-
-Master : 20.197.XX.XXX
-
-Node1 : 52.140.XX.XXX
-
-Node2 : 20.193.XX.XXX
 
 <div align=center> 
 <img width="1008" alt="SCR-20230420-w0z" src="https://user-images.githubusercontent.com/54627871/236670331-d2449c99-7537-4f89-b1ce-1ddb2efe1e0a.png">
@@ -16,7 +10,7 @@ Node2 : 20.193.XX.XXX
 
   
 
-1. Deployed Azure Virtual Machine instances with Linux images for the master and worker nodes. 
+1. Deployed Azure Virtual Machine instances with Linux Ubuntu images for the master and worker nodes. ( Check Node Setup/readme.md)
 2. Allowed inbound traffic to the master and worker node VMs.
 3. Installed the containerd runtime on the nodes.
 ```bash
@@ -29,23 +23,8 @@ sudo apt-get update && sudo apt-get install -y containerd
 
 
 4. Installed the kubeadm, kubelet, and kubectl packages on the nodes.
-```bash
-sudo apt-get update && sudo apt-get install -y apt-transport-https curl
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
-sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
-```
-
 5. Initialized the master node using the kubeadm init command.
-```bash
-sudo kubeadm init --pod-network-cidr= 
-```
-
 6. Joined the worker nodes to the cluster using the kubeadm join command.
-```bash
-sudo kubeadm join
-```
 7. Installed the WeaveNet network plugin on the cluster.
 ```bash
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"

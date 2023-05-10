@@ -8,7 +8,7 @@ Check the Azure readme for the Azure configuration and the steps I followed to d
 
 Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It provides a platform-agnostic way to deploy and manage applications in a containerized environment. Kubernetes abstracts away the underlying infrastructure and provides a consistent API to manage containers across multiple environments.
 
-This repository is intended to document my kubernetes-learning through the course of the Kodekloud CKA [KodeKloud CKA](https://kodekloud.com/courses/certified-kubernetes-administrator-cka/) course through creating a Kubernetes cluster on Azure from scratch using Kubeadm.
+This repository is intended to document my kubernetes-learning through the course of the [KodeKloud CKA](https://kodekloud.com/courses/certified-kubernetes-administrator-cka/) course through creating a Kubernetes cluster on Azure from scratch using Kubeadm.
 
 ## Contents
 
