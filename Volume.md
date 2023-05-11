@@ -54,11 +54,46 @@ volumeBindingMode: WaitForFirstConsumer
 ```
 
 
-### Config Map and Secrets
+### Config Map and Secrets in Volume
 
 ConfigMaps and Secrets are volumes that can be mounted to a pod. They are used to store configuration data and sensitive information such as passwords, API keys, and other secrets. They are stored in the etcd database and can be accessed by any pod in the cluster.
 
 These volumes are mounted to a pod using the same syntax as other volumes, but they are not created by the pod itself. Instead, they are created by the Kubernetes API server when the pod is created. This means that the pod does not need to be restarted when the ConfigMap or Secret is updated.
+
+
+
+## Sharing Volume between containers
+
+There are cases where we need to share the volume between two containers in the same pod. This can be done by using the same volume name in both the containers. 
+Example: Log files of the application can be shared with the logstash container to send the logs to the ELK (Elasticsearch, Logstash, Kibana) stack.
+
+### EmptyDir
+
+EmptyDir is used to create a temporary directory on the host machine and share it between the containers. The data in the directory is deleted when the pod is deleted.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: two-containers
+spec:
+    volumes:
+        - name: shared-data
+        emptyDir: {}
+    containers:
+        - name: nginx-container
+        image: nginx
+        volumeMounts:
+            - name: shared-data
+            mountPath: /usr/share/nginx/html
+        - name: debian-container
+        image: debian
+        volumeMounts:
+            - name: shared-data
+            mountPath: /pod-data
+        command: ["/bin/sh"]
+        args: ["-c", "echo Hello from the debian container > /pod-data/index.html"]
+```
 
 
 
