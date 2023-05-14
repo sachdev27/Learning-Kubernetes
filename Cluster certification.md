@@ -7,11 +7,25 @@
 kubeadm certs check-expiration
 ```
 
+### using openssl
+
+```bash
+openssl x509 -in /etc/kubernetes/pki/apiserver.crt -text -noout
+```
+
+
 ## 2. Renewing the certificates using kubeadm
 
 ```bash
 kubeadm alpha certs renew all
 ```
+
+### for single certificate
+
+```bash
+kubeadm alpha certs renew apiserver
+```
+
 
 ## 3. Restarting the control plane components
 
