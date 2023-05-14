@@ -8,8 +8,19 @@ We can access the kubectl command from the master node. But we can't access the 
 1. Create a proxy server on the master node using the kubectl proxy command.
 
 ```bash
-kubectl proxy --address='
+kubectl proxy --address=' <master-node-ip> ' --port=8080 --accept-hosts='^*$'
 ```
+
+### stoppping the proxy server by killing the process
+
+```bash
+ps -ef | grep kubectl
+```
+
+```bash
+kill -9 <process-id>
+```
+
 
 ## Accessing the proxy server from the worker node
 
@@ -30,3 +41,10 @@ kubectl get svc
 ```bash
 curl http://<master-node-ip>:<port-number>/api/v1/namespaces/default/pods
 ```
+
+## using certificate and Authorization tokens to access the proxy server
+
+
+```bash
+curl -X get http://<master-node-ip>:<port-number>/api/v1/namespaces/default/pods --header "Bearer: <authorization-token>" --ca-cert <certificate>
+``` 
